@@ -7,6 +7,7 @@ CLUSTER_NAME=""
 NODE_GROUP_NAME=""
 AMI_ID=""
 INSTANCE_TYPE="t3.xlarge"
+KEY_NAME=""
 
 POSITIONAL=()
 while [[ $# -gt 0 ]]; do
@@ -66,6 +67,7 @@ cat > ${TMP_LT_FILE} <<EOF
     "ImageId":"${AMI_ID}",
     "InstanceType":"${INSTANCE_TYPE}",
     "UserData":"$(cat $TMP_USER_DATA_FILE | base64 -w 0)",
+    "KeyName":"${KEY_NAME}",
     "TagSpecifications":[
         {
             "ResourceType":"instance",
