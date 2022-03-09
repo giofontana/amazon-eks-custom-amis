@@ -34,6 +34,11 @@ while [[ $# -gt 0 ]]; do
             shift # past argument
             shift # past value
             ;;
+        --key-name)
+            KEY_NAME="$2"
+            shift # past argument
+            shift # past value
+            ;;            
         *)    # unknown option
             POSITIONAL+=("$1") # save it in an array for later
             shift # past argument
