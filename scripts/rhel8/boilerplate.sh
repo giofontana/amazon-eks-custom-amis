@@ -10,8 +10,6 @@ source /etc/packer/files/functions.sh
 wait_for_cloudinit
 
 # upgrade the operating system
-dnf clean all
-rm -r /var/cache/dnf
 dnf update -y && dnf autoremove -y
 
 # install dependencies
